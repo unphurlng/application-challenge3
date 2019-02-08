@@ -20,20 +20,18 @@ const partTimeNode = document.getElementById('part-time'); //5
         // a. assign node.value to iput name (schedule)
         // b. conditional - if statement - if node.checked then schedule = node.value 
     // 7 grab positions value inside event listener
-    // 8 create applicant object
+    // 8 create applicant object inside event listener
 
 let schedule = fullTimeNode.value; //6a
 fullTimeNode.addEventListener('change', function() { //6
     if(fullTimeNode.checked) { //6b
         schedule = fullTimeNode.value;
     }
-    console.log('schedule:', schedule);
 });
 partTimeNode.addEventListener('change', function() { //6
     if(partTimeNode.checked) { //6b
         schedule = partTimeNode.value;
     }
-    console.log('schedule:', schedule);
 });
 
 applicationFormNode.addEventListener('submit', function(event) {
@@ -42,6 +40,7 @@ applicationFormNode.addEventListener('submit', function(event) {
     const nameNode = applicationFormNode.elements.name.value; //3
     const emailNode = applicationFormNode.elements.email.value; //3
     const phoneNode = applicationFormNode.elements.phone.value; //3
+    const positionsNode = applicationFormNode.elements.positions.value; //7
 
     let genderChecked = []; //4a
     for(let i = 0; i < applicationFormNode.gender.length; i++) { //4b
@@ -50,4 +49,6 @@ applicationFormNode.addEventListener('submit', function(event) {
             genderChecked.push(gender.value);
         }
     }
+
+
 });
