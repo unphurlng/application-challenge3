@@ -40,7 +40,6 @@ document.addEventListener('submit', function(event) {
         if(gender.checked) { //4d
             genderChecked.push(gender.value);
         }
-        console.log('what gender', genderChecked);
     }
 
     let schedule = null; //6a
@@ -55,7 +54,7 @@ document.addEventListener('submit', function(event) {
         nameKey: nameNode.value,
         emailKey: emailNode.value,
         phoneKey: phoneNode.value,
-        genderKey: genderChecked.value,
+        genderKey: genderChecked,
         scheduleKey: schedule,
         positionsKey: positionsNode.value
     };
