@@ -31,7 +31,7 @@ const positionsNode = document.getElementById('positions'); //7
 
 
 
-document.addEventListener('submit', function(event) {
+applicationFormNode.addEventListener('submit', function(event) { //2
     event.preventDefault();
 
     let genderChecked = []; //4a
