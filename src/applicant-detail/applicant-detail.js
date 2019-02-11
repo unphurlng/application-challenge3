@@ -15,5 +15,3 @@ detailEmailNode.textContent = hydratedApplicant.email;
 detailPhoneNode.textContent = hydratedApplicant.phone;
 detailScheduleNode.textContent = hydratedApplicant.schedule;
 detailPositionNode.textContent = hydratedApplicant.position;
-
-// new computer - testing if git is hooked up
