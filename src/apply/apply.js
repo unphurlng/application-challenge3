@@ -1,3 +1,4 @@
+// GLOBALS
 const applicationFormNode = document.getElementById('application-form'); //1
 const nameNode = document.getElementById('name'); //3
 const emailNode = document.getElementById('email'); //3
@@ -30,10 +31,11 @@ const positionsNode = document.getElementById('positions'); //7
 // file - applicant-detail.js
 
 
-
+// EVENT LISTENER
 applicationFormNode.addEventListener('submit', function(event) { //2
     event.preventDefault();
 
+    // CHECKBOXES
     let genderChecked = []; //4a
     for(let i = 0; i < applicationFormNode.gender.length; i++) { //4b
         const gender = applicationFormNode.gender[i]; //4c
@@ -42,6 +44,7 @@ applicationFormNode.addEventListener('submit', function(event) { //2
         }
     }
 
+    // RADIO BUTTONS
     let schedule = null; //6a
     if(fullTimeNode.checked) { //6b
         schedule = fullTimeNode.value;
@@ -50,6 +53,7 @@ applicationFormNode.addEventListener('submit', function(event) { //2
         schedule = partTimeNode.value;
     }
 
+    // OBJECT
     const applicantObject = { //8
         nameKey: nameNode.value,
         emailKey: emailNode.value,
@@ -59,8 +63,10 @@ applicationFormNode.addEventListener('submit', function(event) { //2
         positionsKey: positionsNode.value
     };
 
+    // STRINGIFY OBJECT AND PUT IN LOCAL STORAGE
     const applicantObjectString = JSON.stringify(applicantObject); //9
     window.localStorage.setItem('applicantObject', applicantObjectString); //10
-    window.location = 'thanks.html'
 
+    // FORWARD TO THANKS PAGE AFTER SUBMIT
+    window.location = 'thanks.html'
 });
