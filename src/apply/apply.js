@@ -26,9 +26,12 @@ const positionsNode = document.getElementById('positions'); //7
         // b. conditional for each button - if node.checked then schedule = node.value 
     // 7 globals - grab node for pull-down
     // 8 create applicant object inside event listener
-    // 9 stringify object - assign to variable
-    // 10 put stringified object into local storage
-// file - applicant-detail.js
+    // 9 redirect to thanks.html on submit (of application)
+// file - applicant-detail.html
+    // 10 create table to display applicants
+// file - apply.js
+    // 11 assign stringified object to variable
+    // 12 "set" object into local storage
 
 
 // EVENT LISTENER
@@ -63,10 +66,10 @@ applicationFormNode.addEventListener('submit', function(event) { //2
         positionsKey: positionsNode.value
     };
 
-    // STRINGIFY OBJECT AND PUT IN LOCAL STORAGE
-    const applicantObjectString = JSON.stringify(applicantObject); //9
-    window.localStorage.setItem('applicantObject', applicantObjectString); //10
+    const serializedArray = JSON.stringify(applicantObject); //11
+
+    window.localStorage.setItem('applicantObject', serializedArray); //12
 
     // FORWARD TO THANKS PAGE AFTER SUBMIT
-    window.location = 'thanks.html'
+    // window.location = 'thanks.html'; //9
 });
